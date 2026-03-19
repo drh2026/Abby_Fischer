@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Mrs. Fisher Knows About Old Southern Cooking — 1881</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brick:     #7A2E1A;
+  --sienna:    #B85A32;
+  --amber:     #C9933A;
+  --parchment: #F4ECD8;
+  --cream:     #FAF5EA;
+  --espresso:  #271208;
+  --brown:     #4A2010;
+  --taupe:     #9E8272;
+  --muted:     #C4B49A;
+  --rule:      #D4B88A;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background: var(--parchment);
+  color: var(--espresso);
+  font-family: 'Lora', Georgia, serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(184,90,50,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 90%, rgba(122,46,26,0.05) 0%, transparent 60%);
+}
+
+/* MASTHEAD */
+.masthead {
+  background: var(--brick);
+  background-image: linear-gradient(135deg, var(--brown) 0%, var(--brick) 50%, #9A3520 100%);
+  color: var(--cream);
+  text-align: center;
+  padding: 2.6rem 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.masthead::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 18px, rgba(255,255,255,0.02) 18px, rgba(255,255,255,0.02) 19px
+  );
+  pointer-events: none;
+}
+.masthead-rule {
+  width: 180px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--amber), transparent);
+  margin: 0 auto 1.1rem;
+}
+.masthead-label {
+  font-family: 'Spectral', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.7rem;
+}
+.masthead h1 {
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.7rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--cream);
+  margin-bottom: 0.35rem;
+}
+.masthead h1 em {
+  font-style: italic;
+  color: #F5D9B8;
+}
+.masthead-sub {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+.masthead-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.masthead-meta span {
+  font-family: 'Spectral', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.masthead-meta strong { color: var(--amber); }
+
+/* NAV TABS */
+.tab-nav {
+  background: var(--brown);
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid var(--amber);
+  position: sticky; top: 0; z-index: 100;
+}
+.tab-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Spectral', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.85rem 1.4rem;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tab-btn:hover { color: var(--cream); }
+.tab-btn.active { color: var(--amber); border-bottom-color: var(--amber); }
+
+/* PANELS */
+.panel { display: none; padding: 2rem 1rem 3rem; max-width: 960px; margin: 0 auto; }
+.panel.active { display: block; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin-top: 1.5rem; }
+@media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
+.about-card {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--sienna);
+  padding: 1.4rem 1.5rem;
+}
+.about-card h3 {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.05rem;
+  color: var(--brick);
+  margin-bottom: 0.7rem;
+}
+.about-card p {
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--brown);
+}
+.about-card p + p { margin-top: 0.6rem; }
+.about-wide {
+  grid-column: 1 / -1;
+}
+.section-head {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.35rem;
+  color: var(--brick);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.ornament {
+  text-align: center;
+  color: var(--amber);
+  font-size: 1.2rem;
+  margin: 1.2rem 0;
+  letter-spacing: 0.3em;
+}
+.awards-list {
+  list-style: none;
+  margin-top: 0.4rem;
+}
+.awards-list li {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.86rem;
+  color: var(--taupe);
+  padding: 0.2rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+.awards-list li::before { content: '✦'; position: absolute; left: 0; color: var(--amber); font-size: 0.6rem; top: 0.35rem; }
+
+/* BROWSE */
+.search-bar {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+}
+.search-bar input {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--cream);
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  color: var(--espresso);
+  outline: none;
+}
+.search-bar input:focus { border-color: var(--sienna); }
+.search-bar select {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--rule);
+  background: var(--cream);
+  font-family: 'Spectral', serif;
+  font-size: 0.85rem;
+  color: var(--brown);
+  cursor: pointer;
+  outline: none;
+}
+.browse-count {
+  font-family: 'Spectral', serif;
+  font-size: 0.82rem;
+  color: var(--taupe);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.06em;
+}
+.recipe-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.recipe-item {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  transition: border-left-color 0.15s, background 0.15s;
+  overflow: hidden;
+  user-select: none;
+}
+.recipe-item:hover { border-left-color: var(--sienna); background: #FFFBF3; }
+.recipe-item.open { border-left-color: var(--brick); }
+.recipe-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.75rem 1rem;
+}
+.recipe-num {
+  font-family: 'Spectral', serif;
+  font-size: 0.72rem;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  min-width: 2rem;
+  font-weight: 500;
+}
+.recipe-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 1rem;
+  color: var(--brick);
+  flex: 1;
+}
+.recipe-cat {
+  font-family: 'Spectral', serif;
+  font-size: 0.7rem;
+  color: var(--taupe);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.recipe-badges { display: flex; gap: 0.4rem; align-items: center; }
+.badge {
+  font-family: 'Spectral', serif;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--rule);
+  color: var(--taupe);
+  white-space: nowrap;
+}
+.recipe-body-wrap { display: none; padding: 0 1rem 1rem 3.5rem; }
+.recipe-item.open .recipe-body-wrap { display: block; }
+.recipe-body {
+  font-family: 'Lora', serif;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--brown);
+  margin-bottom: 0.7rem;
+}
+.recipe-hint {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--taupe);
+}
+.recipe-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: 'Spectral', serif;
+  font-size: 0.76rem;
+  color: var(--sienna);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--rule);
+}
+.recipe-link:hover { color: var(--brick); border-bottom-color: var(--sienna); }
+
+/* CATEGORIES */
+.cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 1.5rem; }
+.cat-btn {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--rule);
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  transition: border-top-color 0.15s, background 0.15s;
+}
+.cat-btn:hover, .cat-btn.active {
+  border-top-color: var(--sienna);
+  background: #FFFBF3;
+}
+.cat-btn-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.95rem;
+  color: var(--brick);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.cat-btn-count {
+  font-family: 'Spectral', serif;
+  font-size: 0.72rem;
+  color: var(--taupe);
+  letter-spacing: 0.08em;
+}
+.cat-results { margin-top: 0.5rem; }
+
+/* MENU GENERATOR */
+.menu-controls {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--brick);
+  padding: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.menu-controls h3 {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.1rem;
+  color: var(--brick);
+  margin-bottom: 1rem;
+}
+.menu-options { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end; }
+.menu-option label {
+  display: block;
+  font-family: 'Spectral', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 0.35rem;
+}
+.menu-option select, .menu-option input[type=number] {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--rule);
+  background: var(--parchment);
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  color: var(--espresso);
+  outline: none;
+  width: 160px;
+}
+.menu-option input[type=number] { width: 80px; }
+.btn-generate {
+  background: var(--brick);
+  color: var(--cream);
+  border: none;
+  padding: 0.55rem 1.4rem;
+  font-family: 'Spectral', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-generate:hover { background: var(--sienna); }
+.menu-output {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  padding: 1.4rem;
+}
+.menu-output h3 {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.2rem;
+  color: var(--brick);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.menu-output .menu-date {
+  text-align: center;
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--taupe);
+  margin-bottom: 1.2rem;
+}
+.menu-course { margin-bottom: 1rem; }
+.menu-course-label {
+  font-family: 'Spectral', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.menu-dish {
+  cursor: pointer;
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted var(--rule);
+  user-select: none;
+}
+.menu-dish:last-child { border-bottom: none; }
+.menu-dish-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.05rem;
+  color: var(--brick);
+}
+.menu-dish-body {
+  display: none;
+  font-family: 'Lora', serif;
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: var(--brown);
+  margin-top: 0.4rem;
+  padding: 0.6rem;
+  background: var(--parchment);
+  border-left: 2px solid var(--sienna);
+}
+.menu-dish.open .menu-dish-body { display: block; }
+.recipe-chevron {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.2rem;
+  color: var(--amber);
+  margin-left: 0.5rem;
+  transition: transform 0.2s;
+  display: inline-block;
+  line-height: 1;
+}
+.recipe-item.open .recipe-chevron { transform: rotate(90deg); }
+.menu-dish-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.menu-dish-chevron {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.2rem;
+  color: var(--amber);
+  transition: transform 0.2s;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.menu-dish.open .menu-dish-chevron { transform: rotate(90deg); }
+.menu-source-link {
+  color: var(--sienna);
+  font-family: 'Spectral', serif;
+  font-size: 0.76rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.menu-source-link:hover { color: var(--brick); }
+
+@media (max-width: 500px) {
+  .tab-btn { padding: 0.75rem 0.8rem; font-size: 0.72rem; letter-spacing: 0.08em; }
+  .masthead h1 { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-rule"></div>
+  <div class="masthead-label">The Historical Culinary Archive · American Classics</div>
+  <h1><em>What Mrs. Fisher Knows</em><br>About Old Southern Cooking</h1>
+  <div class="masthead-sub">Soups, Pickles, Preserves, &c. · San Francisco, 1881</div>
+  <div class="masthead-rule"></div>
+  <div class="masthead-meta">
+    <span><strong>Author</strong> Mrs. Abby Fisher, Late of Mobile, Ala.</span>
+    <span><strong>Recipes</strong> 160</span>
+    <span><strong>Publisher</strong> Women's Co-operative Printing Office</span>
+    <span><strong>Source</strong> Archive.org · University of California</span>
+  </div>
+</div>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('about',this)">About</button>
+  <button class="tab-btn" onclick="showTab('browse',this)">Browse</button>
+  <button class="tab-btn" onclick="showTab('categories',this)">Categories</button>
+  <button class="tab-btn" onclick="showTab('menu',this)">Menu Generator</button>
+</nav>
+
+<!-- ABOUT -->
+<div id="tab-about" class="panel active">
+  <h2 class="section-head">About This Work</h2>
+  <div class="about-grid">
+    <div class="about-card about-wide">
+      <h3>The Author</h3>
+      <p>Mrs. Abby Fisher, formerly of Mobile, Alabama, is among the earliest known African American women to publish a cookbook in the United States. She produced this volume in 1881 at the direct request of patrons in San Francisco, Oakland, and Sacramento — women who had witnessed her skill firsthand and urged her to commit her knowledge to print.</p>
+      <p>In the preface she addresses, with candor and grace, the central difficulty: she could neither read nor write. Her husband, also without formal education, served as amanuensis, writing the book at her dictation. "After due consideration," she writes, "I concluded to bring forward a book of my knowledge — based on an experience of upwards of thirty-five years — in the art of cooking." The final entry, Recipe 160, closes with a quiet remark that has no parallel in nineteenth-century culinary literature: <em>"I have given birth to eleven children and raised them all, and nursed them with this diet."</em></p>
+    </div>
+    <div class="about-card">
+      <h3>Historical Significance</h3>
+      <p>Published fourteen years before Fannie Farmer's <em>Boston Cooking-School Cook Book</em>, <em>What Mrs. Fisher Knows</em> preserves a tradition of Southern Black cookery — gumbo, terrapin stew, Jumberlie (a forerunner of jambalaya), circuit hash, plantation corn bread — transmitted entirely through oral culture and professional practice.</p>
+      <p>Fisher's voice throughout is direct and authoritative. She seasons dishes "high," insists on fresh ingredients, adjusts heat across a wood-fired range, and notes where a recipe "is the most delicious in the cookery." The book is both practical instruction and cultural document.</p>
+    </div>
+    <div class="about-card">
+      <h3>Awards &amp; Recognition</h3>
+      <ul class="awards-list">
+        <li>Two medals, San Francisco Mechanics' Institute Fair, 1880 — Best Pickles &amp; Sauces and Best Assortment of Jellies &amp; Preserves</li>
+        <li>Diploma, Sacramento State Fair, 1879</li>
+        <li>Blackberry Brandy (Recipe 101) took a diploma at the 1879 State Fair — the only recipe in the book to cite its own prize</li>
+      </ul>
+      <div class="ornament">— ✦ —</div>
+      <p>The book was printed at the Women's Co-operative Printing Office, 420–430 Montgomery Street, San Francisco — itself a remarkable institution of the Gilded Age.</p>
+    </div>
+    <div class="about-card">
+      <h3>This Archive Entry</h3>
+      <p>All 160 numbered recipes have been transcribed from the University of California copy, digitized by the Internet Archive with funding from Microsoft Corporation. Source scans are linked from each recipe.</p>
+      <p>The original printing contains no illustrations. Recipe numbering is Fisher's own. The text is reproduced faithfully, including her spelling of <em>ochra</em>, <em>jumberlie</em>, <em>vigareets</em>, and other period usages.</p>
+      <p style="margin-top:0.8rem; font-family:'Spectral',serif; font-size:0.8rem; color:var(--taupe);">
+        Archive.org identifier: <code style="font-size:0.78rem;">whatmrsfisherkno00fishrich</code>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- BROWSE -->
+<div id="tab-browse" class="panel">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search recipes, ingredients, methods…" oninput="renderBrowse()">
+    <select id="catFilter" onchange="renderBrowse()">
+      <option value="">All Categories</option>
+    </select>
+  </div>
+  <div class="browse-count" id="browseCount"></div>
+  <div class="recipe-list" id="recipeList"></div>
+</div>
+
+<!-- CATEGORIES -->
+<div id="tab-categories" class="panel">
+  <h2 class="section-head">Browse by Category</h2>
+  <div class="cat-grid" id="catGrid"></div>
+  <div class="cat-results recipe-list" id="catResults"></div>
+</div>
+
+<!-- MENU GENERATOR -->
+<div id="tab-menu" class="panel">
+  <div class="menu-controls">
+    <h3>Southern Table · Menu Generator</h3>
+    <div class="menu-options">
+      <div class="menu-option">
+        <label>Occasion</label>
+        <select id="menuOccasion">
+          <option value="dinner">Formal Dinner</option>
+          <option value="supper">Family Supper</option>
+          <option value="breakfast">Breakfast</option>
+          <option value="luncheon">Luncheon</option>
+        </select>
+      </div>
+      <div class="menu-option">
+        <label>Courses</label>
+        <input type="number" id="menuCourses" value="4" min="2" max="6">
+      </div>
+      <button type="button" id="btnGenerate" class="btn-generate">Generate Menu</button>
+    </div>
+  </div>
+  <div class="menu-output" id="menuOutput" style="display:none;"></div>
+</div>
+
+<script>
+// ─── RECIPE DATA ───────────────────────────────────────────────────────────
+// [num, title, body, printed_page, scan_n, category, cook_time, portions]
+const RECIPES = [
+[1,"Maryland Beat Biscuit","Take one quart of flour, add one teaspoonful of salt, one tablespoonful of lard, half tablespoonful of butter. Dry rub the lard and butter into the flour until well creamed; add your water gradually in mixing so as to make dough stiff, then put the dough on pastry board and beat until perfectly moist and light. Roll out the dough to thickness of third of an inch. Have your stove hot and bake quickly. To make more add twice the quantity.",9,14,"Breads & Biscuits","",""],
+[2,"Egg Rolls","One quart of flour, half tablespoonful of butter, two eggs lightly beat, half tea-cup of sweet yeast, half tea-cup of water, one teaspoonful of salt. Mix as a sponge, about 10 o'clock at night, for breakfast; put to rise until morning. With dry flour knead the sponge, not too stiff; make off rolls, put to rise in baking pan, then have oven hot and bake slowly. When rolls are done, put them in a napkin until sent to table.",9,14,"Breads & Biscuits","",""],
+[3,"Breakfast Cream Cake","Four eggs beat light, one gill of cream to a tea-cup of sweet milk, one pint of flour sifted, half teaspoonful of salt; mix cream, milk, and eggs together, well stirred, then add flour gradually until thoroughly mixed. Have your baking cups hot when put to bake. Requires ten minutes to bake in hot oven.",10,15,"Breads & Biscuits","10 min",""],
+[4,"Waffles for Breakfast","Two eggs beat light, one pint of sour milk, to one and a half pint of flour, one teaspoonful of soda sifted with the flour, one tablespoonful of butter, teaspoonful of salt, well mixed, and then add the eggs. Always have your irons perfectly hot and well greased. In baking, melt butter before mixing in flour. Place them in a covered dish and butter them on sending to the table.",10,15,"Breads & Biscuits","",""],
+[5,"Flannel Cake","One quart of flour, quarter tea-cup of yeast, make into a batter, with one teaspoonful of salt; make up over night and put to rise. Just before baking on a nicely greased griddle, for breakfast, add one level teaspoonful of soda, and stir it well into the batter.",10,15,"Breads & Biscuits","",""],
+[6,"Sally Lund","One quart of flour, quarter pound of butter, perfectly rubbed into the flour while dry, one teaspoonful of salt, five eggs beat very light, half tea-cup of milk to quarter tea-cup of yeast; add all to the flour, and stir the whole together as you would pound cake, and put to rise at 10 o'clock at night; next morning beat over until light as cake and put in warm place to rise a second time, after which bake as carefully as baking pound cake. Bake in the pan it rises in the second time. Just grease the pan before putting to rise the second time.",10,15,"Breads & Biscuits","",""],
+[7,"Breakfast Corn Bread","One tea-cup of rice boiled nice and soft, to one and a half tea-cupful of corn meal mixed together, then stir the whole until light; one teaspoonful of salt, one tablespoonful of lard or butter, three eggs, half tea-cup of sweet milk. The rice must be mixed into the meal while hot; can be baked either in muffin cups or a pan.",11,16,"Breads & Biscuits","",""],
+[8,"Corn Egg Bread","Two eggs, one pint of meal, half pint of sour milk, one teaspoonful of soda, beat eggs very light, one tablespoonful of melted lard or butter, mix all together, well stirred or beaten. Bake in an ordinary pan.",11,16,"Breads & Biscuits","",""],
+[9,"Plantation Corn Bread or Hoe Cake","Half tablespoonful of lard to a pint of meal, one tea-cup of boiling water; stir well and bake on a hot griddle. Sift in meal one teaspoonful of soda.",11,16,"Breads & Biscuits","",""],
+[10,"Light Bread","Half yeast cake to two quarts of flour, teaspoonful of salt, one dessertspoonful of butter or lard. Dissolve yeast in warm water; make up over night at 10 o'clock; make dough soft and spongy, and set to rise in a warm place. Next morning work the dough over until it becomes perfectly light, adding flour so as to keep it from sticking to the hands, then put to rise in your baking pan, and when it rises bake in a hot oven until thoroughly done.",11,16,"Breads & Biscuits","",""],
+[11,"Beefsteak — Broiled","Have the gridiron perfectly hot, then lay the steak on the iron while hot, the iron being over hot coals. Let the steak be on the iron about two minutes the first time, turning it over about once. In a minute remove from iron to a platter or pan and stick it through and through with a fork, so as to let the blood run out. Then place the steak back on the hot iron, turning it over as before; then take off iron, salt and pepper it and baste with butter; then lay it back on gridiron, turning it over for about two minutes; then lay in a dish, dress with butter and send to the table. A steak an inch and one-half thick may require twelve minutes to broil, turning it over every three minutes.",12,17,"Meats & Poultry","12 min",""],
+[12,"Lamb or Mutton Chops","Will take five minutes to broil, and must observe the same directions you have in the beefsteak.",12,17,"Meats & Poultry","5 min",""],
+[13,"Pork Steak or Chops","Should be broiled in the same way as the beefsteak, except that about eight to ten minutes should broil them, as pork must be well done.",12,17,"Meats & Poultry","8–10 min",""],
+[14,"Venison — Broiled","Pepper and salt before putting it on the gridiron, but remove it every two or three minutes from the iron and baste with butter. When you want deviled venison, use a little mustard mixed with wine (claret). Should you like your venison tart or a little acid, baste with currant jelly.",13,18,"Meats & Poultry","",""],
+[15,"Roast Venison","First stuff the meat before roasting; make stuffing of bread crumbs browned; season stuffing with butter, salt, onions (grated), pork or ham chopped fine. When it is put into the oven, baste well with butter or lard, and while cooking notice and continue to baste until done. Two hours are sufficient, with a hot fire, to cook this roast. To make your gravy, brown a tablespoonful of flour in your pan from which you take the roast, add a little water, stir with spoon slowly until well done. If you do not like onions, use a little green or dry thyme.",13,18,"Meats & Poultry","2 hrs",""],
+[16,"Roast Beef","Should be well cooked outside and rare on the inside. The oven should bake on bottom and top. A five-pound roast should cook in half an hour, and a ten-pound one in one hour. Season roast with salt and pepper before putting it to cook, baste it with lard or butter before putting in stove, and while cooking baste with the juice that comes out of the meat every two or three minutes until done.",13,18,"Meats & Poultry","30–60 min",""],
+[17,"Roast Lamb","Prepare in the same way as the roast beef, except the lamb should be well done. In a hot oven, one hour is necessary to cook the lamb. Mint sauce for roast lamb: chop tender mint very fine, put cold water or vinegar, one tablespoonful of vinegar to three of water, and a little sugar according to taste.",14,19,"Meats & Poultry","1 hr",""],
+[18,"Roast Pork","To be seasoned with salt and pepper before being cooked, and in cooking baste with the gravy that comes from the meat. Must be cooked with a fast fire. To make the gravy, take one tablespoonful of flour browned in the pan and stir in a little water.",14,19,"Meats & Poultry","",""],
+[19,"Roast Pig","Examine when it comes from the butcher and see that it is completely cleaned. The pig should be roasted the same way you would a turkey — well done. For the stuffing take a loaf and one-half of baker's bread cut thin, fry the bread in butter or lard and mash it well; season it with salt and pepper according to taste, using a little red pepper. Then stuff the pig putting an apple in its mouth. Put it in the pan and baste with lard, then put it to roast, and while it is cooking keep basting it every five or ten minutes until it is cooked; you can tell when it is perfectly done by a fork passing through it easily.",14,19,"Meats & Poultry","",""],
+[20,"Roast Veal","Use crackers for your stuffing. Slice an opening in the veal in five or six different places, and fill each one with the stuffing. Season the stuffing with salt, pepper, butter, and a little sage. You can tell when it is done by a fork passing through easily. Baste the roast while cooking with the essence that comes from the meat. Baste it with lard or butter when first put to cook. Use flour for making gravy, same as directed in other roasts.",15,20,"Meats & Poultry","",""],
+[21,"Roast Turkey","First cleanse well and take the craw from the turkey. Make stuffing of light bread chopped fine, season with butter, pepper and salt; then stuff the body completely full, also where the craw was. Put in pan and baste with butter or lard, and put to roast. While cooking, keep basting it with the juice that comes from the turkey. When it is cooked take a tablespoonful of flour and brown it in the pan, then add a little water and stir for the gravy.",15,20,"Meats & Poultry","",""],
+[22,"Roast Chicken","The same as for turkey. See Recipe No. 21.",15,20,"Meats & Poultry","",""],
+[23,"Roast Birds","In the same way as turkey. See Recipe No. 21.",15,20,"Meats & Poultry","",""],
+[24,"Quails","When roasted, make nice toast, butter it and send quails to table on the toast. Do not forget to baste all game and fowls while cooking, so as to make them juicy. Make stuffing same as for chicken.",16,21,"Meats & Poultry","",""],
+[25,"Domestic Duck","Bake or roast in the same manner you do a turkey, and have it well cooked. Make stuffing of bread, like that prepared for turkey, with salt, pepper, butter or lard. Baste while cooking.",16,21,"Meats & Poultry","",""],
+[26,"Wild Duck","Should not be stuffed, but cleaned well and seasoned with pepper and salt, inside and outside, and put into a hot oven. Ten minutes will cook it.",16,21,"Meats & Poultry","10 min",""],
+[27,"Meat Stews or Entrees","Cut your meat into inch pieces and put into a saucepan; season with salt, pepper, and butter or lard. Put one pint of water to a pound of meat. One hour will cook, unless very young, when less time is sufficient. Add onions if liked.",16,21,"Meats & Poultry","1 hr",""],
+[28,"Lamb Croquettes","Boil lamb till thoroughly done, then cut into small pieces taking all sinews and gristle out, and put into a chopping tray; grate onion in it to suit your taste, also grate two or three sour pickles in it; then chop the whole up very fine indeed. Season with salt and pepper. Add one and one half boiled Irish potatoes to one pound of lamb mashed to fine meal while hot; thoroughly mix together with the hand. Make into small cakes, oblong style; then take two eggs and beat them very light, dip the cakes into the egg, and then roll into powdered crackers. Have fat very hot and put them into it, and let them fry quick till brown.",16,21,"Croquettes","",""],
+[29,"Chicken Croquettes","Boil chicken very tender, pick to pieces, take all gristle out, then chop fine. Beat two eggs for one chicken and mix into meat; season with pepper and salt; make into cakes oblong shaped; powder crackers and roll them into the powder, after dipping them into two eggs beaten moderately well. Then have your lard very hot, and fry just before sending them to the table.",17,22,"Croquettes","",""],
+[30,"Crab Croquettes","Have crabs well boiled in salt and water, then pick them clean from the shell; chop fine; take the large end of a piece of celery and grate into the crab; chop with crab a small piece of onion fine; mix half a teacup of fine powdered cracker into crab; season with pepper and salt, also the least bit of fine red pepper, as crabs should be seasoned high to be nice. Have your lard hot, and fry just before wanted at table. Beat two eggs, dip croquettes in the egg, roll in powdered crackers before frying; make them oblong shaped.",17,22,"Croquettes","",""],
+[31,"Meat Croquettes","You can make croquettes from any kind of meat you like from the directions given for the lamb croquettes, such as veal, except make veal into cakes as you would a biscuit, round. You need not use onions unless you like, but always salt and pepper.",17,22,"Croquettes","",""],
+[32,"Veal or Lamb Vigareets","Boil meat rare done, pick all gristle out, grate as much onion in the chopped meat as you like. Take half the quantity of brains that comes in one head (calf or lamb), scald them, pick all the skin from them; mix then with the meat, one-half of a nutmeg grated, pepper and salt; season high and fry the same as other croquettes. Make a gravy of cream and pour on vigareets just as going to table. Making gravy: put sweet cream into a clean vessel, put over steam until hot, add a very little pepper and salt, then chop some fresh parsley fine and sprinkle it over vigareets while on dish. Make oblong cakes.",18,23,"Croquettes","",""],
+[33,"Liver Croquettes","Made of lamb or veal liver. One pound of liver to a quarter of a pound of suet, part boil, chop both separately very fine; pick all strings out of suet, then add suet and liver together, a small piece of onion grated, salt and pepper; season high. Beat one egg light and mix well with hand, roll in powdered cracker, fry in hot lard or butter, garnish dish with parsley and send to table.",18,23,"Croquettes","",""],
+[34,"Oyster Croquettes","Chop very fine one dozen oysters, take one boiled potato and mash hot into the fine oysters; take the yelk of one egg only, mix well into the oysters and season with pepper and salt to taste; then roll them, after making into oblong cakes, in powdered crackers; have your fat very hot, and fry quick and send to table.",18,23,"Croquettes","",""],
+[35,"Fish Croquettes","One pound of boiled fish to one and a half potatoes, chop a small piece of onion fine and mix with fish; season with pepper and salt to your taste; make them out in cakes like the other croquettes, roll them in dry corn meal, fry in hot fat and send to table.",19,24,"Croquettes","",""],
+[36,"Fricasseed Chicken","Chicken must be tender and well cleaned inside. Singe all pin feathers off over the fire. Boil two eggs hard, take the yelks and rub fine into one tablespoonful of butter, then add one tablespoonful of corn starch dissolved into the least bit of water; add all together, well mixed and free from lumps. Have your chicken cut up before boiling, and stir the fricassee into the chicken just before sending to table. Season with salt and pepper while cooking.",19,24,"Meats & Poultry","",""],
+[37,"Fried Chicken","Cut the chicken up, separating every joint, and wash clean. Salt and pepper it, and roll into flour well. Have your fat very hot, and drop the pieces into it, and let them cook brown. The chicken is done when the fork passes easily into it. After the chicken is all cooked, leave a little of the hot fat in the skillet; then take a tablespoonful of dry flour and brown it in the fat, stirring it around, then pour water in and stir till the gravy is as thin as soup.",19,24,"Meats & Poultry","",""],
+[38,"Beef Soup","Six pounds of meat to two and one-half gallons of water. Boil to one gallon and one-half; then strain all meat out from the bouillon. Season with pepper and salt.",20,25,"Soups & Chowders","",""],
+[39,"Ox-Tail Soup","Can be made from the same bouillon of beef as seen in No. 38. Take two quarts of bouillon to two ox-tails; boil down to three pints. You can put in either ochra or vermicelli. Season with salt and pepper. Skim all grease off while boiling. Have the butcher unjoint the ox-tail.",20,25,"Soups & Chowders","",""],
+[40,"Calf's Head Soup","Let the butcher open the head wide. Take the brains from it and lay into clean water with a little salt. Leave the tongue in the head when put on to boil; when the tongue is tenderly boiled or done, take it out of the pot and let it get cold for making tongue salad. Two gallons of water to a calf's head; boil to one gallon; strain it off clear for soup to one dozen guests. Brown two tablespoonfuls of flour with one tablespoonful of butter to a cream, add to the soup gradually, stirring well. Season with salt and pepper, and a little red pepper. While cooking, boil a small piece of thyme and half of an onion tied in a clean linen rag, to be taken out when done. One teaspoonful of mustard mixed with one tablespoonful of wine, to be put into the tureen before pouring in the soup hot, also one glass of sherry wine. Make brain balls: beat two eggs light and add to the brains, add one-quarter tea cup of powdered cracker and one tablespoonful of flour; make brain batter into cakes the size of a hickory nut and fry brown in hot fat just before taking up soup. Serve two cakes to a plate of soup. Chop parsley very fine and boil it into the soup.",20,25,"Soups & Chowders","","12 guests"],
+[41,"Mock Turtle Soup","Follow the same directions given for calf's head soup. Use for flavor half of a lemon sliced, and put in tureen and pour hot soup on. Instead of brain-balls or cakes, make a forced meat of boiled ham chopped very fine with the yelk of a hard boiled egg; season with black pepper. Make balls the size of a hickory nut and fry in hot butter. Send to table in separate dish, serving one ball to a plate of soup.",21,26,"Soups & Chowders","","12 guests"],
+[42,"Green Turtle Soup","To two pounds of turtle add two quarts of water, put to boil on a slow fire and cook down to three pints. Season while boiling with pepper and salt to taste. Take three hard boiled eggs, slice very thin and lay in tureen; slice one-fourth of a lemon and put in tureen also. Then pour in tureen one gill of sherry wine. Then pour on hot soup and send to table.",22,27,"Soups & Chowders","","12 guests"],
+[43,"Oyster Gumbo Soup","Take an old chicken, cut into small pieces, salt and black pepper. Dip it well in flour, and put it on to fry over a slow fire till brown; don't let it burn. Cut half of a small onion very fine and sprinkle on chicken while frying. Then place chicken in soup pot, add two quarts water and let it boil to three pints. Have one quart of fresh oysters with all the liquor that belongs to them, and before dishing up soup, add oysters and let come to a boil the second time, then stir into soup one tablespoonful of gumbo quickly. Dish up and send to table. Have parsley chopped very fine and put in tureen on dishing up soup. Have dry boiled rice to go to table with gumbo in separate dish. Serve one tablespoonful of rice to a plate of gumbo.",22,27,"Soups & Chowders","",""],
+[44,"Ochra Gumbo","Get a beef shank, have it cracked and put to boil in one gallon of water. Boil to half a gallon, then strain and put back on fire. Cut ochra in small pieces and put in soup; don't put in any ends of ochra. Season with salt and pepper while cooking. Stir it occasionally and keep it from burning. To be sent to table with dry boiled rice. Never stir rice while boiling. Season rice always with salt when it is first put on to cook, and do not have too much water in rice while boiling.",22,27,"Creole & Southern Dishes","",""],
+[45,"Old Fashioned Turnip Soup","Take two pounds veal bones to half a gallon of water, and boil to one quart. Put turnips and bones on to boil together, then strain the liquor off and send to table hot. Season while cooking with pepper and salt.",23,28,"Soups & Chowders","",""],
+[46,"Chicken Soup for the Sick","Take an old chicken and put on with one gallon of water; boil down to half a gallon. Take the yelks of two eggs, tie them up in a clean cloth with a little thyme and put in the soup after you have strained the meat from it, and put back to boil till down to three pints. Dish up and send to table hot. Season with salt and pepper to taste.",23,28,"Soups & Chowders","",""],
+[47,"Corn and Tomato Soup","Take a fresh beef bone, put on to boil with one gallon of water, and when boiling skim the grease off. Cut corn from cob and scald tomatoes with boiling water. Skin them and put both vegetables into soup, the corn ten minutes before dinner. Cut tomatoes in small pieces and let them boil in soup at least one hour.",23,28,"Soups & Chowders","1+ hr",""],
+[48,"Pastry for Making Pies of All Kinds","One pound of flour nicely sifted to quarter pound of butter and one quarter pound of lard, one teaspoonful of salt, fine, mixed in flour while dry; then with your hands rub the butter and lard into the flour until thoroughly mixed, then add enough cold water and mix with your hands so as to make pastry hold together — be sure not have it too wet; sprinkle flour very lightly on pastry board, and roll pastry out to the thickness of an egg-shell for the top of fruit, and that for the bottom of fruit must be thin as paper. In rolling pastry, roll to and from you; you don't want more than ten minutes to make pastry.",24,29,"Pies & Pastry","10 min",""],
+[49,"Preparing the Fruit for Pies","One gill of water to four pounds rhubarb; first peel the rhubarb; sweeten to taste while cooking, and put into pastry when cold. Prepare apples same way; season with cinnamon. Peaches the same way; season with cinnamon.",24,29,"Pies & Pastry","",""],
+[50,"Lemon Pies","Take four eggs, one tablespoonful of butter to one and a half tea-cup of powdered sugar, rub butter and sugar together until a cream, then add the yelks of the eggs to butter and sugar, and beat until light; beat the white of the egg until perfectly light, and add to the others. Take two lemons, roll them with your hands on board until soft, then grate peel of lemons and put into preparation, then squeeze juice of lemons into preparation. All articles in this preparation should be well mixed together and put in pastry, and baked immediately in a hot oven. Only one layer of pastry at bottom of pie plate.",24,29,"Pies & Pastry","",""],
+[51,"Cocoanut Pie","One cocoanut fresh, draw off the milk, then place the nut in a hot oven and let it stay long enough for the shell to pull off; then grate with the nut juice one tea-cup of powdered white sugar, one tablespoonful of butter and lard rubbed together until creamed, then take the yelks of four eggs and beat into sugar and butter until perfectly light; grate the rind of one lemon into it, and squeeze the juice of the lemon into the creamed butter and sugar; beat the white of four eggs light, and add also to creamed butter and sugar, and stir them well, add also one-half tea-cup of sweet milk. Will make three pies. Use a half pound of flour for the pastry, bake in quick oven.",25,30,"Pies & Pastry","","3 pies"],
+[52,"Cream Apple Pie","The best of apples to be used. To two pounds of apples use a gill of water; put on fire to steam till the apples will mash perfectly fine and soft; sweeten to taste and let them cool. Season with powdered cinnamon — one-half teaspoonful of the best. Have one crust of pastry only, and that at the bottom of plate; fill plate with the fruit, then bake quickly in a hot oven. Take one pint of fresh cream sweetened to taste; beat the white of five eggs light, and add to the cream; flavor with vanilla. Beat the cream lightly before adding the eggs, then with a spoon spread over pies on sending to table.",25,30,"Pies & Pastry","",""],
+[53,"Sweet Potato Pie","Two pounds of potatoes will make two pies. Boil the potatoes soft; peel and mash fine through a cullender while hot; one tablespoonful of butter to be mashed in with the potato. Take five eggs and beat the yelks and whites separate and add one gill of milk; sweeten to taste; squeeze the juice of one orange, and grate one-half of the peel into the liquid. One half teaspoonful of salt in the potatoes. Have only one crust and that at the bottom of the plate. Bake quickly.",26,31,"Pies & Pastry","","2 pies"],
+[54,"Custard Pie","Half dozen eggs beaten together lightly; one pint of sweet milk; sweeten to taste. Grate one nutmeg in it. Have one crust only, and that at the bottom of plate. Use deep plates and bake quickly. It will make two nice pies.",26,31,"Pies & Pastry","","2 pies"],
+[55,"Gooseberry and Cherry Pies","Use one gill of water to two pounds of either fruit; sweeten to taste, leaving it a little tart. When it cools, put into plates for baking, having two crusts, top and bottom of plate. Bake quickly, and send to table cold.",26,31,"Pies & Pastry","",""],
+[56,"Orange Pie","Peel the oranges; cut them very thin and spread with sugar thickly. Have your pie crust rich, the same as other pie pastry. Lay bottom crust in plate, and put in the oranges with juice, then cover over with top crust, and put to bake in a quick oven.",26,31,"Pies & Pastry","",""],
+[57,"Light Bread Pie","Take stale bread and grate it. To one and one-half teacupfuls of the grated bread, add two teacupfuls of sweet milk, the juice of one orange, and half of the peel grated. Stir the yelks of four eggs beaten light into it. Take the whites of the four eggs beaten very light and meringue the pies after baking. Put half teacupful of sugar and one tablespoonful of butter to the prepared bread. Have one crust only, and that at the bottom of plate. Bake quickly.",27,32,"Pies & Pastry","",""],
+[58,"Cracker Pie","To be made the same as bread pie, except flavor with one-half teaspoonful of ground cloves, one-half teaspoonful of ground cinnamon, and one tablespoonful of butter.",27,32,"Pies & Pastry","",""],
+[59,"Mince Pies","One beef tongue boiled tender, then take the skin off; four pounds beef kidney suet, peel all the skin off it and chop very fine with the tongue; two pounds citron chopped fine, four pounds apples, four pounds raisins well seeded, four pounds currants well washed and dried, four oranges — the peel of two grated and the fruit of all four grated into mince meat; two tablespoonfuls of ground allspice, one tablespoonful of cloves, two nutmegs grated, and two tablespoonfuls of ground cinnamon. Chop the whole very fine and mix well together, then put in one-half gallon sherry wine and one-half gallon brandy. Grate two lemons in the meat. Salt to your taste, also sweeten to your taste. Have bottom and top crust.",27,32,"Pies & Pastry","",""],
+[60,"Gold Cake","Take one dozen eggs and separate the yelks from the white, and beat the yelks very light; one pound of butter, one pound of flour and one pound of powdered sugar; rub the butter and sugar together until creamed very light, then add the beaten yelks of the eggs to the creamed butter and sugar, and beat again until light. Take two teaspoonfuls of the best yeast powder, and sift with the one pound of flour, then add this flour to the creamed butter and eggs, with a half teacupful of sweet milk, and stir the whole hard and fast till light, then grate the peel of one lemon and squeeze the juice in the cake and stir well.",28,33,"Cakes & Cookies","",""],
+[61,"Silver Cake","The whites of one dozen eggs beaten very light, one pound of butter, one pound of powdered sugar; rub the butter and sugar together until creamed very light, then add the beaten whites of the eggs, and beat all together until very light; two teaspoonfuls of the best yeast powder sifted with one pound of flour, then add the flour to the eggs, sugar and butter, also add one-half teacupful of sweet milk; mix quickly, and beat till very light; flavor with two teaspoonfuls of the extract of almond or peach. Put to bake in any shape pan you like, grease the pan well. Have the stove moderately hot so as the cake will bake gradually, and arrange the damper of stove so as send heat to the bottom of the cake first.",28,33,"Cakes & Cookies","",""],
+[62,"Almond Cake","Made in the same way that the silver and gold cakes are, except you take one teacup of almonds, scald them in hot water, wipe them with a cloth and the peeling will come off. Either split or chop them fine. Use the whites or the yelks of one dozen eggs.",29,34,"Cakes & Cookies","",""],
+[63,"Feather Cake","One teacup of butter, two of flour, two of sugar. Cream the flour and butter together; two teaspoonfuls of yeast powder to one teacup of sweet milk. Mix all with the flour and beat light with a large spoon. To be baked in round tins. Grease well and bake in a moderately hot stove.",29,34,"Cakes & Cookies","",""],
+[64,"Sponge Cake","Take one dozen eggs and put in scales as the balance for weighing an equal quantity of sugar. Then balance flour to the weight of six eggs. Beat the yelks of the dozen eggs with the sugar very light, then beat the whites very light and add to the other. Grate the peel of one lemon into it also, squeezing the juice in, and then stir the flour in lightly. Have your pans in readiness, grease with butter, and place white paper at bottom of pan. A sponge cake should not stand a second after made before it is baked. Bake in a medium oven, keeping heat at bottom.",29,34,"Cakes & Cookies","",""],
+[65,"Fruit Cake","One pound of flour sifted and browned in stove, one pound of citron sliced into very small pieces, one pound of raisins cut in small pieces, one pound of currants well washed and dried with clean towel, one tea-cup of almonds chopped fine, one tablespoonful of powdered cinnamon, half a teaspoonful of mace, one tablespoonful of allspice, half a teaspoonful of ground cloves, one pint of black molasses strained before using, one wineglass of brandy, one pound of butter, one pound of sugar, one dozen eggs. Beat whites and yelks separate, light, before adding to cake.",30,35,"Cakes & Cookies","",""],
+[66,"Jelly Cake","For this cake make an orange marmalade and use in the place of jelly, as it makes a more delicious cake. Half a dozen oranges to a teacup of granulated sugar; peel oranges and grate them, pick out the seed and pith, add sugar to oranges and stir well and put to cook; stir while cooking; twenty minutes will cook it. It must be made a day before using it for cake. For making the cake: one teacup of butter to two of sugar, three of flour and half a dozen eggs. Beat the whites and yelks of eggs separate, very light. Cream butter and sugar together. Sift two teaspoonfuls of best yeast powder with the flour. Fifteen minutes will bake it. Spread marmalade over the cake after it is baked. Icing: take the whites of four eggs and beat them very light, add three tablespoonfuls of powdered sugar, beat sugar and eggs together light, and spread on cake while cake is warm. Take one tea-cup of fine grated cocoanut and sprinkle over cake while icing is soft.",30,35,"Cakes & Cookies","15 min",""],
+[67,"Carolas","Five eggs to two cups of sugar; break eggs into the sugar and beat the whole till perfectly light. Sift one quart of flour; take one-half teacup of sweet milk and put a level teaspoonful of soda in it; one teaspoonful of salt. Flavor with the juice of one orange, the peel of half an orange grated, and one teaspoonful of butter. Cut them out five inches by two inches, slice them two inches in the middle and stretch open a little. Have your fat boiling hot, but do not let it burn. Put carolas in hot fat, shake skillet gradually till brown.",31,36,"Cakes & Cookies","",""],
+[68,"Raised Cake","One quart flour, half a pound butter, one pint sugar, two eggs, half a teacup yeast, one teacup seeded raisins, one and one-half teacups currants. Cream butter and sugar together, then add the flour. Break eggs in, add yeast and beat the whole well. Lastly, add the fruit, stir all well and put it to rise. With good yeast it will rise in an hour. After rising, make off and put into pans greased with butter. When you make off the second time and put in pans, first take a tablespoonful of flour with a teaspoonful of soda and sift into the batter; it will rise in thirty minutes. Then put to bake.",32,37,"Cakes & Cookies","",""],
+[69,"Old-Time Ginger Cake","One pint molasses, one quart flour, one-half teacup brown sugar, one teacup butter, one tablespoonful cinnamon, two tablespoonfuls ginger, one teacup sour milk. With it mix a teaspoonful soda and three eggs. Cream butter and sugar together, then add molasses, then flour, then eggs, then milk, then ginger and cinnamon; stir thoroughly and put to bake in oblong pans.",32,37,"Cakes & Cookies","",""],
+[70,"Ginger Cookies","One teacup of molasses, one-half teacup of sugar, one tablespoonful of butter, one tablespoonful of lard, one quart of flour, two tablespoonfuls of ginger, one teaspoonful of cinnamon, one teaspoonful of allspice, two tablespoonfuls of yeast powder. Cream butter and sugar together and add molasses. Sift yeast powder and flour together and add to butter, sugar and molasses, then add lard and spices, and work it up well. Roll out on a board, and cut them out and bake like you would a biscuit.",32,37,"Cakes & Cookies","",""],
+[71,"Jumble Cake","One teacup of butter, one and one-half teacups of sugar, one and one-half pints of flour; four eggs, two teaspoonfuls of cinnamon, one-half teacup of almonds chopped fine, two teaspoonfuls of yeast powder sifted in the flour. Beat the butter, sugar and eggs together, then add the flour. Put cinnamon and almonds in and work the whole up well, then roll on the board to thickness of half an inch, and cut out a finger's length and join together at ends, so as to be round. Grease pans with butter and put to bake.",33,38,"Cakes & Cookies","",""],
+[72,"Sweet Wafers","One teacup each of butter and sugar creamed together, one grated orange, four eggs, one tablespoonful of cinnamon. Add three pints of flour and make up stiff. Then roll out on a board and cut them out about the size of a biscuit, and roll again till thin as paper, and bake in a quick oven. Watch close while baking. You can roll them round on a fork handle while they are warm, if you like.",33,38,"Cakes & Cookies","",""],
+[73,"Sweet Cucumber Pickles","Take pickles that have already been pickled in vinegar, and slice them in four pieces lengthwise, or cut them crosswise the thickness of a silver half-dollar, and place them in an earthen jar in layers of about three inches in thickness, covering each layer of pickles all over with granulated sugar. Let them remain under the sugar twenty-four hours, then take them out and put them in jars. Make a syrup: one quart of sugar to one quart of clear water, and let it boil down to one quart. Add one tea-cup of wine vinegar to one pint of syrup, then add the vinegar syrup to the pickles until they are thoroughly covered. Always use granulated sugar.",33,38,"Pickles & Relishes","",""],
+[74,"Sweet Cucumber Mangoes","Take large pickled cucumbers, open them with a knife on one side to within half an inch of each end. Scrape out the inside with your fingers, then sprinkle them inside with granulated sugar as thick as a ten-cent piece. Let them remain in that state twenty-four hours or longer, then stuff perfectly full and tie them or wrap with white cord. Make the stuffing: one-fourth of a head of a small cabbage cut up fine, two dozen cucumber pickles sliced the size of a cherry, two large onions sliced thin, one dozen cucumber pickles chopped fine, two pounds of white mustard seed, one tablespoonful of ground allspice, one teaspoonful of ground cloves, sugar to your taste, one-half gallon of wine vinegar. Put to boil slowly in a porcelain kettle; two hours will cook it. Salt and pepper to your taste.",34,39,"Pickles & Relishes","2 hrs",""],
+[75,"Chow Chow","Take one cabbage, a large one, and cut up fine. Put in a large jar or keg, and sprinkle over it thickly one pint of coarse salt. Let it remain in salt twelve hours, then scald the cut-up cabbage with one gallon of boiling vinegar. Cut up two gallons of cucumbers, green or pickled, and add to it; cut in pieces the size of the end of little finger. Then chop very fine two gallons more of cucumbers or pickles and add to the above. Seasonings: one pound of brown sugar, one tablespoonful of cayenne pepper, one tablespoonful of black pepper, two gallons of pure wine vinegar, two tablespoonfuls of tumerick, six onions chopped fine or grated. Then put it on to cook in a large porcelain kettle, with a slow fire, for twelve hours. Stir it occasionally to keep it from burning.",35,40,"Pickles & Relishes","12 hrs",""],
+[76,"Creole Chow Chow","One gallon of green tomatoes sliced thin, half dozen silver skin onions sliced thin, one gallon wine vinegar, two tea-cups of brown sugar, one tablespoonful of cayenne pepper, one tablespoonful black pepper, one tablespoonful of tumerick. Put the onions and tomatoes together in a keg or jar and sprinkle over them one pint of salt and let it so remain twenty-four hours, then drain all the brine off from them over cullender, then put the vinegar to them and add the seasoning, and put to cook on a slow fire, stir to keep from burning. It will take the whole day to cook.",35,40,"Creole & Southern Dishes","All day",""],
+[77,"Cherry Chutney","Get your cherries and seed them; to one gallon half dozen silver skin onions chopped fine; first put the onions to cook in half gallon of vinegar, 10 minutes, then add the cherries, season with two ounces of ground cinnamon, one teaspoonful of cayenne pepper and one of black pepper, two tablespoonfuls of salt, then let it continue to cook with a slow fire, twelve hours, stir it occasionally and keep from burning.",36,41,"Pickles & Relishes","12 hrs",""],
+[78,"Game Sauce","Take one peck of plums, half dozen silver skin onions and chop them very fine; first seed plums; use a porcelain kettle; put the onions to stew in a pint of vinegar until thoroughly done, then add them to the plums; four pounds of granulated sugar to be added; season with one teaspoonful of cayenne pepper, one of black pepper, two ounces of cinnamon broke in fine pieces; cook on a slow fire, stir frequently to avoid burning — one teaspoonful of table salt. It will take one whole day to cook; when cool cork in a tight jar and keep in cool closet.",36,41,"Salads & Sauces","All day",""],
+[79,"Compound Tomato Sauce","One peck of ripe tomatoes, cut them in slices and put them in a vessel, and add one tea-cupful of salt to them, two ounces fine allspice, one ounce of fine cloves, one tablespoonful of black pepper and one of cayenne pepper, five large silver skin onions cut up fine, and the whole stand twenty-four hours; mix well together when you set to stand, then put it to cook with one quart of vinegar and let it cook all day; stir it occasionally; it must become thick before it is thoroughly cooked, then strain all skin and studs out of it through a sieve; when cool put in a demijohn.",37,42,"Salads & Sauces","All day",""],
+[80,"Napoleon Sauce","Twenty green cucumbers to one quart of Chili peppers and one dozen Bell peppers (take out seeds); chop the cucumbers and pickles fine, and mix well together, and sprinkle half a teacupful of salt over them. Chop half dozen red onions in it. Pour one gallon of vinegar over it and let it stand one day and night, then put it to cook next morning and cook slowly all day, stirring it occasionally to keep it from burning, then strain through a sieve. Take a half teacupful of brown sugar and put it in a frying pan on the fire, and let it bake thoroughly just next to burning; then stir in one pint of vinegar to the sugar and when it comes to a light boil strain it through a sieve into the sauce, and stir till well mixed. When cooled cork up in a demijohn.",37,42,"Pickles & Relishes","All day",""],
+[81,"Pepper Mangoes","Take the Bell peppers and scald them in boiling vinegar, then cut the top end of the peppers out and clean out the seeds nicely. Prepare a stuffing: one gallon of cucumber pickles, one-half of a head of large cabbage, one-half dozen large silver skin onions, and chop them all up very fine; then take two pounds of white mustard seeds, sift all the dust from them and wash clean, one-quarter pound of celery seed, and two quarts of vinegar; add to the vegetables, and put to boil and boil slowly for three hours, stirring every two or three minutes. Season with one tablespoonful of cayenne pepper and one of black pepper. When the stuffing becomes cool, stuff your Bell peppers using a teaspoon, then place the top back on them, and tie nicely with cord. Pack them close together in a keg or barrel. This quantity of stuffing will stuff about fifty large Bell peppers. See that they be covered well with vinegar when packed.",38,43,"Pickles & Relishes","3 hrs","50 peppers"],
+[82,"Meat Dressing","One peck of young carrots grated, one dozen red skin onions grated, one dozen cauliflowers grated; mix the vegetables together and put to cook, adding two gallons of vinegar. Season with two tablespoonfuls of ground black pepper, one tablespoonful of cayenne pepper, and one teacupful of salt. Put one teacupful of brown sugar on the fire in a frying pan, and let cook to a dark brown, then pour in two teacupfuls of vinegar; stir it well and strain it through a sieve into the kettle while cooking, and let it cook slowly one day. This dressing is nice for all meat entrees, soups and gravies; put two tablespoonfuls to one-half gallon soup, and one tablespoonful to one quart of stew.",39,44,"Salads & Sauces","All day",""],
+[83,"Sweet Pickle Peach","Use the cling stone peach. Have your vinegar boiling hot and drop your peaches into it, letting them remain in the hot vinegar for five minutes, then take them out and put them in a stone jar. About every six inches of peaches cover with sugar one inch thick. Use five pounds of sugar to ten pounds of peaches. Let the peaches remain under sugar one day, then take the juice and the sugar if any remain undissolved, add two pounds more of sugar, and put on the fire in a porcelain kettle, and let it cook to a thick clear syrup, then pour the syrup boiling hot over the peaches. Take the vinegar the peaches were scalded in and put it to boil the second time, adding one-half teacupful of whole allspice and one ounce of whole cloves, then pour it on the peaches. Pour this juice on the peaches for nine mornings alternately.",39,44,"Pickles & Relishes","9 days",""],
+[84,"Sweet Pickle Pears","Follow the same directions in making sweet pickle pears as in making sweet pickle peaches, as given in Recipe No. 83.",40,45,"Pickles & Relishes","9 days",""],
+[85,"Sweet Pickle Prunes","Follow the same directions as given in Recipe No. 83 for making sweet pickle peaches, except use cinnamon bark instead of allspice — one teacupful of cinnamon to ten pounds of prunes.",40,45,"Pickles & Relishes","9 days",""],
+[86,"Sweet Watermelon Rind Pickle","Take the melon rind and scrape all the meat from the inside, and then carefully slice all the outside of rind from the white part, then lay the white part over with salt. It will have to remain under salt one week before pickling; the rind will keep in salt from year to year. When you want to pickle it, take it from the salt and put into clear water, change the water three times a day — must be changed every four hours — then dry it with a clean cloth. Have your vinegar boiling, and put the rind into it and let it scald four minutes, then let it lay in vinegar four days. Then drain, and sprinkle sugar thickly over it. To make syrup: add eight pounds more sugar to the syrup from the rind, and boil till a thick and clear syrup. While the syrup is cooking add one teacupful of white ginger root and the peel of three lemons. Then put the rind into the boiling syrup, and let it cook till you can pass a fork through it with ease. When cooled put in jar or bottles with one pint of vinegar to one quart of syrup.",40,45,"Pickles & Relishes","2+ weeks",""],
+[87,"Onion Pickles","Take as many small onions as you desire to pickle and peel them, then put them in a keg or barrel in layers about three inches thick, covered all over with salt freely. Let them remain one or two days, then take the onions out of the salt and put them in clear water long enough to be seasoned with salt to your taste. Put the onions in a large cullender and let the water drain from them, then put them into a keg, cover them with vinegar, and let them remain in the vinegar twenty-four hours. Take the vinegar from them and put it on to boil, seasoning with: two gallons of vinegar will take one teacupful of allspice, two tablespoonfuls of cloves, one-half teacupful of black pepper, one-fourth pound of white ginger, one-fourth pound of Chile peppers. Boil twenty minutes, strain vinegar from the spices and pour over the pickles.",41,46,"Pickles & Relishes","2+ days",""],
+[88,"Plain Pickles","Any vegetable you want to pickle — small or large cucumbers, cabbage or green tomatoes — have them fresh and put them into a barrel in layers about three inches deep, covering thickly with salt. Let them remain under the brine twenty-four hours, then lay in fresh water for two hours to get the smell of the old brine off them. Drain two or three days, then put in a clean keg or barrel and cover thoroughly with vinegar. Season the vinegar by boiling with: one teacupful of allspice, one-fourth pound of ginger root, two ounces of cloves, one-half teacupful of black pepper, two tablespoonfuls of cayenne pepper to five gallons of vinegar. When it boils twenty minutes, pour the boiling vinegar over the pickles.",42,47,"Pickles & Relishes","",""],
+[89,"Brandy Peaches","Always have the cling peach, free from decay. Peel the peaches and put down in a jar; one layer of peaches about four peaches deep, covering thickly with granulated sugar; continue in this manner until you get all the peaches in the jar you wish to brandy. Let them remain under sugar twenty-four hours; then take the same juice that comes from the peaches while under sugar, boil it and pour over the peaches boiling hot. Let them remain in this boiling syrup until it cools. Take this same syrup and put on to boil, adding more sugar so as to make it thick. Put up the peaches in glass jars, and to one teacupful of syrup add one teacupful of brandy and pour over the peaches until they are completely covered. Cork the jars and put in closet.",43,48,"Preserves, Jams & Jellies","",""],
+[90,"Brandy Peaches No. 2","Have the cling peach, free from decay. Weigh the peaches after peeling, so as to allow one pound of sugar to one gallon of peaches in making the syrup. Then put the sugar on the fire to make the syrup, adding enough clear water to keep the sugar from burning while melting. Let the syrup boil until it gets as thick as honey. Put your peeled peaches in a stone jar that is air-tight. Then take one teacupful of syrup to one teacupful of brandy and pour it on the peaches until they are covered thoroughly. Let the water in the kettle around the jar of peaches boil for three hours, and no longer. When thoroughly cool, pack the peaches in glass jars and fill with brandy and syrup as directed.",44,49,"Preserves, Jams & Jellies","3 hrs",""],
+[91,"Quince Preserves","Never use decayed fruit. Put quinces in a kettle of boiling water and let boil until they are soft enough to stick a fork into them easily. Then take them off the fire and peel them, cutting them into four pieces and taking all the core out nicely. Put a layer of sugar, then a layer of quinces about six inches deep, then cover thickly with sugar. You must have an equal quantity of sugar and quinces — pound to pound. Let them remain in sugar a day and night, then put the sugar the quinces were in on to boil, and when it comes to a boil, put the quinces into the syrup, letting them boil for ten minutes at a time. Keep repeating the change all day. When they get the color of gold coin they are preserved.",45,50,"Preserves, Jams & Jellies","All day",""],
+[92,"Syrups for Preserves","To ten pounds of sugar add three pints of clear water, hot or cold. When it commences to boil skim the froth from it with a spoon, and let it boil until the froth ceases to collect, then the syrup is made.",45,50,"Preserves, Jams & Jellies","",""],
+[93,"Preserved Peaches","Have cling peaches, peel them, cut them in half and take the kernels out. Put peaches in sugar, a layer of peaches then a layer of sugar. Weigh peaches and sugar equally. Let them remain so one day and night. Next day take sugar and juice from the peaches and put on to boil, and when it comes to a boil, put the peaches in the syrup and let them boil ten minutes. Then take them out and put others in, and keep repeating, letting them boil for ten minutes at a time, until preserved. When the peaches look the color of gold coin they are preserved.",46,51,"Preserves, Jams & Jellies","All day",""],
+[94,"Pear Preserves","Are to be prepared the same way that peaches are prepared. If you want to preserve them whole, only peel them and lay them under sugar. Also take one-quarter pound of white ginger root to ten pounds of pears, crack or bruise it, and sprinkle it over each layer of pears under the sugar. Let them remain a day and night, and take the juice and sugar from the pears next day and put to boil for the syrup with the ginger in it; let them boil for ten minutes at a time, and repeat till done.",46,51,"Preserves, Jams & Jellies","All day",""],
+[95,"Currant Jelly","Put the currants in a cloth or bag and squeeze the juice thoroughly from the fruit, then strain the juice through a thin cloth. Measure the juice of the currants; then measure an equal quantity of sugar and place the sugar in a baking pan and put on the stove to heat through thoroughly — it must neither brown nor burn — then put the currant juice and sugar on in a porcelain kettle to boil slowly. Let the currant juice commence boiling before you put the sugar in, then boil both together for thirty minutes. Dip up some of the jelly and pour it in a saucer and set in the air; if it congeals in five minutes it is made. Use granulated sugar.",47,52,"Preserves, Jams & Jellies","30+ min",""],
+[96,"Cranberry Jelly","Follow the same directions as given in Recipe No. 95 for making currant jelly. Use granulated sugar.",48,53,"Preserves, Jams & Jellies","30+ min",""],
+[97,"Strawberry Jam","Must have fresh berries that are not running. Squeeze the juice from the berries through a clean linen cloth; then add one-half pint of sugar to every pint of juice and put on to boil in a porcelain kettle, and when it boils as thick as honey add the berries that you squeezed the juice from to the syrup and let it continue to boil until it gets as thick as mush. Use granulated sugar.",48,53,"Preserves, Jams & Jellies","",""],
+[98,"Raspberry and Currant Jam Combined","Take an equal quantity of both kinds of fruit and squeeze the juice from them; put one pint of it to one-half pint of sugar; then put on to boil, letting it boil till thick as honey; then add the berries and currants that you squeezed the juice from, and let all boil together till thick as mush. Use granulated sugar.",48,53,"Preserves, Jams & Jellies","",""],
+[99,"Marmalade Peach","Peel the peaches and take the seeds away. Use the freestone peach, taking one-half pound of sugar to one pound of peaches. Sprinkle the sugar thickly over the peaches and let them lay in the sugar one night; next morning mash the peaches and sugar thoroughly, and put to cook, and let it cook slowly. Do not put any water to it. It requires five hours cooking. Use porcelain kettle and keep from burning.",49,54,"Preserves, Jams & Jellies","5 hrs",""],
+[100,"Crab Apple Jelly","Put the apples to boil; one quart of water to one quart of apples and let them boil till soft; then mash the apples and put the apples and the water they were boiled in in a linen rag, and let all the juice drip into a vessel; measure the juice and take one quart of the dripped juice to one quart of sugar, and put on to boil for jelly. Boil thirty minutes and then dip some into a saucer and set in the air; if it is congealed when cool, it is done.",49,54,"Preserves, Jams & Jellies","30+ min",""],
+[101,"Blackberry Brandy","To five gallons of berries add one gallon of the best brandy; put on fire in a porcelain kettle and let it just come to a boil, then take it off the fire and make a syrup of granulated sugar; ten pounds of sugar to one quart of water. Let the syrup cook till thick as honey, skimming off the foam while boiling; then pour it upon the brandy and berries and let it stand eight weeks; then put in bottle or demijohn. This blackberry brandy took a diploma at the State Fair of 1879.",50,55,"Preserves, Jams & Jellies","8 weeks",""],
+[102,"Blackberry Syrup for Dysentery in Children","Take one quart of berries and mash up fine in a bowl squeezing all the juice from them, then strain the juice through a thin muslin cloth. To this juice add one pound of crushed sugar and put to boil in a porcelain saucepan, adding one ounce of whole clove and one-half ounce of cinnamon, tying the cinnamon up in a clean cloth; let the cloves remain in the syrup ever after it is cooked. It will take two hours steady boiling to cook. Put into bottles when cool. Dose for an infant of six months: a teaspoonful three times a day till bowels are checked. For a grown person: one-half wine glass three times a day. This recipe is an old Southern plantation remedy among colored people.",50,55,"Remedies & Tonics","2 hrs",""],
+[103,"Preserved Apricots","Weigh an equal quantity of sugar and apricots; take the sugar and put it in a porcelain kettle the day before you buy the apricots, put two gallons of water at bottom of sugar in kettle, let it boil until thick as honey, set off fire; next day put the syrup again on the fire and have it boiling before you drop the apricots in; take the apricots out of boiling syrup every five minutes and put others in, repeating the shifting every five minutes for five hours when they will be preserved. For making syrup: to one pound of sugar half pint of water.",51,56,"Preserves, Jams & Jellies","5 hrs",""],
+[104,"Apple Sauce for Roast Pork","One dozen apples cut very thin, put them in half pint of boiling water, in a nice white saucepan, add a little sugar according to taste.",51,56,"Salads & Sauces","",""],
+[105,"Charlotte Russe","One pint of sweet cream to four eggs; three tablespoonfuls of sugar. Beat first the whites of the eggs to a light froth; then beat the cream to a light froth; then beat the sugar in the eggs; then beat two additional tablespoonfuls of sugar in the cream, light; then add the cream and eggs together; flavor with one and a half teaspoonful of best vanilla, and stir well; then lay your cakes, lady fingers, in the mould, well at the bottom and close together around the sides; then pour in the russe on the cake and set in the ice box. Use granulated sugar in all sweets.",51,56,"Puddings & Desserts","",""],
+[106,"Ice Cream","One quart of sweet cream and the whites of six eggs beaten to a light froth; then beat in the eggs half tea-cup of sugar. Beat the cream light, and add one tea-cupful of sugar to cream and beat again until light, flavor with one and a half tablespoonful of vanilla, and put the whole in freezer. Put at the bottom of freezer pail a layer of ice, cover with salt, set freezer in on it and fill in around freezer with ice and salt; a layer of ice and layer of salt until full to the top of freezer; let no salt get inside of freezer. Ten minutes will freeze it.",52,57,"Puddings & Desserts","10 min",""],
+[107,"Orange Sherbet","Squeeze the juice from two dozen oranges, add to this one and a quarter pound of fine sugar; stir well and freeze the same way as in ice cream.",52,57,"Puddings & Desserts","10 min",""],
+[108,"Lemon Sherbet","Squeeze the juice from one dozen lemons; add two quarts of water and one and a half pounds of lump sugar; let sugar dissolve and stir well, and freeze the same way as in ice cream.",52,57,"Puddings & Desserts","10 min",""],
+[109,"Pine Apple Sherbet","Cut in slices two pine apples, early in the morning, and lay them in one and one-half pounds of fine sugar for three hours. Squeeze all the juice from the apple and put to freeze like ice cream.",53,58,"Puddings & Desserts","3 hrs",""],
+[110,"Snow Pudding","One whole box of Cox's gelatine to a pint of cold water and let it remain one hour; then pour a quart of boiling water on it. Beat the whites of ten eggs to a light froth, and add one and one-half teacupfuls of granulated sugar. When the gelatine gets cold add one-half teacupful of sugar and the juice of one lemon. Beat gelatine into the eggs light. Beat the yelks of ten eggs into one teacupful of sugar; boil one pint of rich milk and pour it boiling on the beaten eggs, stirring well. After this custard cools, add one glass of sherry wine, and set aside for dessert, to be eaten with sponge cake.",53,58,"Puddings & Desserts","",""],
+[111,"Plum Pudding","Brown one pound of flour in the stove and sift it three times; add two pounds of stale light bread grated. Add one quart of dark molasses to one pint of brown sugar, two grated nutmegs, one tablespoonful of allspice, one tablespoonful of ground cloves, two pounds of citron sliced one-half inch thick, two pounds of currants, two pounds of chopped seeded raisins, one tablespoonful of salt, one and one-half tablespoonfuls of yeast powder, two pounds of beef kidney suet chopped fine and taking all strings out. Add all together and stir until thoroughly mixed. Have a bag made in the shape of a sugar-loaf and wet it in cold water, sprinkling on the inside thickly with flour. Put the pudding in the bag and let it boil for seven hours, tie the bag securely. Sauce: one pint of white sugar to two tablespoonfuls of butter and one claret glass of good brandy, put to boil till thick as honey, and serve with pudding hot.",53,58,"Puddings & Desserts","7 hrs",""],
+[112,"Boiled Turkey","See that the turkey is well cleaned. Season with cayenne pepper inside, salt outside, and black pepper. Let it lay in this salt and pepper one hour before boiling. Chop veal and ham fine together before stuffing the turkey; add one dozen oysters to stuffing, sprinkling a teaspoonful of dry mustard and half a teacupful of browned crackers powdered. Stuff the turkey full and tight; then put the turkey in a bag and tie it very tight, and put on in boiling water sufficient to cover it. Let a young turkey boil an hour and five minutes, and an old turkey two hours. Put one tablespoonful of salt in the water. For gravy: two tablespoonfuls of butter and one and one-half tablespoonfuls of flour, rub together until well mixed, sprinkle half a teaspoonful of mustard into it. To this add one pint of boiling milk and stir till it is as thick as honey.",54,59,"Meats & Poultry","1–2 hrs",""],
+[113,"Beef a la Mode","Take a ten-pound round of beef (have the butcher lard it), and tie it tight with a strong cord. Rub into the beef one and one-half tablespoonfuls of salt, one teaspoonful each of cayenne and black pepper. Then slice thin four large carrots and two white turnips and lay them around the beef. Put in the pot about four sprigs of parsley, half a pint of good claret, and one small onion sliced. Let it cook slowly five or six hours and send to table.",55,60,"Meats & Poultry","5–6 hrs",""],
+[114,"Spiced Round","A twenty pound round of beef. Rub into this beef one tea-cup of salt, two tablespoonfuls of cayenne and one of black peppers, quarter pound each of ground allspice and cloves rubbed into beef; then lay the round of beef into a vessel and pour two quarts of vinegar on it and let it lay in vinegar one week, turning it over once every day, keeping it covered tight. After one week put it in a kettle to cook, tie it up tight in a clean cloth; put all the juice that lay around the beef in to cook with it, adding two quarts of water, and let it boil four hours and a quarter. Let it be cold when it is taken out of the cloth. Slice thin when served, as it is excellent for luncheons, parties, etc.",55,60,"Meats & Poultry","4¼ hrs",""],
+[115,"Stuffed Ham","First boil the ham; then take the skin from it while boiling, put one tea-cup of vinegar to it; then take half pound of cooked veal, one tea-cup of powdered cracker; chop veal fine, mix both together, salt and pepper to taste; then make gashes about one-inch apart in the ham; stuff with veal and cracker, and put to bake; then pour one pint of sherry wine over ham and baste the ham while baking, until brown; while ham is baking grate one nutmeg over it, and sprinkle cracker powder over it.",56,61,"Meats & Poultry","",""],
+[116,"Baked Fish","See that fish is well cleaned; then salt and pepper it inside and out, two or three hours before stuffing it or baking. For the stuffing, grate stale bread enough to fill the fish, then put it on fire in a skillet, and add one tablespoonful of butter and one of lard, chop fine one slice of onion and four sprigs of parsley; season with pepper and salt; let the stuffing stay five or ten minutes, stirring it to keep from burning; then stuff the fish until it is perfectly full. Sow it up with a needle and thread and put it to bake in a medium hot stove; pour about half a tea-cup of water in bottom of pan; while fish is baking, baste or spread a little butter on top of fish until it browns.",56,61,"Fish & Seafood","",""],
+[117,"Boiled Fish","See that fish is well cleaned. Season inside and out with pepper and salt one or two hours before putting to boil, then have your boiler with one quart of luke-warm water to receive the fish, and let it remain on a quick fire twenty minutes; if it is a very large fish it will take thirty minutes to cook.",57,62,"Fish & Seafood","20–30 min",""],
+[118,"Sauce for Boiled Fish or Boiled Mutton","One and a half tablespoonfuls of flour, and one of butter rubbed together until creamed; boil one gill of sweet milk, then add it gradually to this creamed butter and flour, and stir it as you add it, until it is thoroughly mixed; season with pepper and salt to taste. Boil four eggs hard and slice them in four pieces lengthways, and put the eggs around the dish when you take up the fish to send to table, and also garnish the dish with parsley.",57,62,"Fish & Seafood","",""],
+[119,"Jumberlie — A Creole Dish","Take one chicken and cut it up, separating every joint, and adding to it one pint of cleanly-washed rice. Take about half a dozen large tomatoes, scalding them well and taking the skins off with a knife. Cut them in small pieces and put them with the chicken in a pot or large porcelain saucepan. Then cut in small pieces two large pieces of sweet ham and add to the rest, seasoning high with pepper and salt. It will cook in twenty-five minutes. Do not put any water on it.",57,62,"Creole & Southern Dishes","25 min",""],
+[120,"Chicken Salad","Take all the meat from the bones of a boiled chicken and chop it fine in a tray. Save out some of the breast meat so as to lay over the top of the salad when it is made. Chop fine half a bunch of white celery and add to chicken. Season the chicken with pepper and salt, using cayenne pepper to taste. Skim the oil from the boiling chicken to pour over the salad. Milanese sauce: beat the yelks of three eggs a little, then add one pint of best sweet oil, beating a little at a time into the eggs, so as to have it light, until the whole pint is added. Mix a teaspoonful of mustard thoroughly in strong vinegar and put in sauce with cayenne and black pepper to suit the taste. When you put the salad on the platter, pour this sauce all over it and set it in an ice box.",58,63,"Salads & Sauces","",""],
+[121,"Veal Salad","Make veal salad and sauce in the same manner as chicken salad and sauce. See Recipe No. 120.",58,63,"Salads & Sauces","",""],
+[122,"Lamb Salad","Lamb salad is also made in the same manner as chicken salad. See Recipe No. 120.",58,63,"Salads & Sauces","",""],
+[123,"Shrimp Salad","Make in the same manner as chicken salad, slicing celery and adding to it. See Recipe No. 120.",59,64,"Salads & Sauces","",""],
+[124,"Crab Salad","Also made with the addition of celery sliced into it in very thin pieces, instead of chopping celery. See Recipe No. 120.",59,64,"Salads & Sauces","",""],
+[125,"Meat Salads","For any meat salads you desire to make, follow the same directions given for chicken salad. See Recipe No. 120.",59,64,"Salads & Sauces","",""],
+[126,"Terrapin Stew","Always have the female terrapins, and put them alive in boiling water. Let them remain for fifteen minutes and then take the shells from them, being careful not to break the galls. Clean the entrails from the meat, and scrape the black skin from the feet with a knife. Half a dozen terrapins will serve twelve persons. After thoroughly cleaning the terrapins, lay them in clear water for ten minutes, and then put them in a kettle to stew with half a pint of water, and stew very slowly for about three hours. Boil half a dozen eggs hard, and rub the yelks to a powder. Then add half a pound of best butter to the eggs and beat together until it becomes a cream. To this cream add one pint of sherry wine and mix it well. Then add this preparation to the stew very gradually, stirring well. While the stew is cooking, mix a teaspoonful of best mustard to a tablespoonful of wine and put in. Slice one lemon and add to stew just before dishing it up for table. A teacupful of sweet cream is an improvement; also a dozen grains of allspice. Salt and pepper to taste.",59,64,"Meats & Poultry","3 hrs","12 persons"],
+[127,"Fish Chowder","Cut up one pound of salt pork in pieces one and two inches in size for a large fish, of about six pounds. Cut the fish in pieces the same as the pork; slice in pieces half dozen Irish potatoes the size of fish. Beat one sea cracker fine, take and slice one large onion, chop it fine; fry the pork brown, take it from the fat. Put in pot a layer of fish, then a layer of pork, then a layer of cracker, then put in one tablespoonful of butter, cayenne pepper, and salt to taste; add one pint of water, and let it stew one hour, when it will be ready for table use.",60,65,"Soups & Chowders","1 hr",""],
+[128,"Clam Chowder","Prepare and make clam chowder in the same way as the fish chowder, except you must use tomatoes — a layer of tomatoes and a layer of the other articles, for fifty to one hundred clams. Put in one pint of sweet milk; before putting clams in pot cut away the black part of clams, add half a teaspoonful of ground cloves, and one teaspoonful of ground allspice, salt and pepper to taste; one dozen tomatoes scalded in boiling water and skin them.",60,65,"Soups & Chowders","","50–100 clams"],
+[129,"Creole Soup","Take three pints of bouillon, put on to boil, just before use chop four leaves of parsley fine, and put in. Brown a teaspoonful of brown sugar on a tin plate, add a sherry wine-glass of sherry wine to sugar, stir it well, then strain through a fine sieve; then stir three tablespoonfuls into soup. Beat two yelks of eggs into tureen and pour hot soup on it and send to table.",61,66,"Creole & Southern Dishes","",""],
+[130,"Spiced Currants","Five pounds fresh currants to three pounds of sugar, one pint of vinegar; wash currants and drain all water from them through sieve or cullender, add sugar and vinegar to currants, and put to cook in a porcelain kettle; season with one ounce ground cloves and one ounce of stick cinnamon, let it cook gradually until it becomes like a jelly. Use granulated sugar.",61,66,"Preserves, Jams & Jellies","",""],
+[131,"Spiced Cherries","Five pounds of cherries to three quarter pounds of sugar, one pint of best vinegar, quarter pound of cloves, quarter pound of allspice. Put sugar, spices and vinegar, all together on fire and boil it, then pour it boiling on the cherries. Before boiling vinegar, spices, and sugar, let cherries lay in spiced vinegar and sugar twenty-four hours, then boil and pour on cherries, and when they get perfectly cold, put up in bottles and cork well.",61,66,"Preserves, Jams & Jellies","",""],
+[132,"Preserved Peaches (No. 2)","Always preserve the cling peach and none other. Cut your peaches in two or four pieces just as you like, and have one pound of granulated sugar to one pound of peaches; put the sugar on peaches the day before preserving; then next day pour juice off peaches and put juice on to boil, when it boils put the peaches in this boiling juice, let them stay five minutes, take them out and lay them on a dish for five minutes, then put them back in the boiling syrup again for five minutes, and repeat or continue taking them out and putting them back every five minutes, for one hour, when they will be preserved.",62,67,"Preserves, Jams & Jellies","1 hr",""],
+[133,"Preserved Cherries","Seed your cherries and put sugar on them the day before preserving. When you pour off the juice next day and put it to boil, when it boils put cherries in, let them stay five minutes, take them out, put them back in boiling syrup in five minutes, and so continue every five minutes for one hour, when they will be preserved. When preserves are cold put away.",62,67,"Preserves, Jams & Jellies","1 hr",""],
+[134,"Corn Fritters","To one dozen ears of corn add three eggs, half a tea-cupful of powdered crackers, one tablespoonful of sifted flour. Cut off the corn very lightly from the cob — say half of the grain — and then scrape the other half clean off with a knife. Add the crackers to corn and beat together light. Beat the eggs light and add with the flour and a quarter of a teacupful of sweet milk. Season to taste and beat the whole light. Have your lard or butter hot when you go to fry, and drip the batter into the hot fat from off the end of a spoon, letting it fry quick and brown. Have young and tender corn. The fat ought to be hot enough to brown the fritters in two minutes.",62,67,"Vegetables & Sides","2 min each",""],
+[135,"Corn Pudding","Take one dozen ears of corn and grate from the cob. Beat four eggs light and add a pint of sweet milk and a tablespoonful of butter, salting and peppering to taste. Beat lightly, place in a deep dish and bake in a hot oven. Ten minutes will bake it. Grease the dish with butter before putting pudding into it, and send to table in the dish it is baked in.",63,68,"Vegetables & Sides","10 min",""],
+[136,"Carving Poultry","In carving always have a sharp knife. First pass the knife close to the body of the fowl, just under the joint of the wing. Then press it back towards the neck with the back of the knife, when it will separate from the body. Take the same course with the leg, and when you have the wings and legs unjointed, turn the fowl on its back and slice meat from the breast and sides, thinly.",63,68,"Meats & Poultry","",""],
+[137,"Boiled Corn","Always put the corn on in boiling water and salt, cooking for seven minutes; a longer cooking than this will take all the sweetness from the corn.",63,68,"Vegetables & Sides","7 min",""],
+[138,"Apple Roll","To one quart of flour add a tablespoonful each of butter and lard (or two of butter, if preferred) and one teaspoonful of fine salt. Work the lard or butter into the flour dry until it is thoroughly mixed, then add salt and a teacupful of water, a little at a time, and mix until the dough is sufficiently thick to roll. Roll your dough out as thin as pie crust, eighteen by ten inches in size. Have three pieces of this size, and lay one sheet of it down and cover it with apples; then lay the second and third sheets down, covering each with apples. Roll the whole up together as you would a towel, then wet a white cloth in cold water and wrap it around the roll, sewing it tightly; then put into a pot of boiling water. Sprinkle dry sugar over each layer of apples before rolling in the cloth. Do not cook over twenty minutes.",64,69,"Vegetables & Sides","20 min",""],
+[139,"Sauce for Apple Roll","Two tablespoonfuls of butter and one and one-half teacupfuls of powdered sugar rubbed together until as light as cream, one-half of a grated nutmeg, one wineglassful of brandy beaten into the creamed butter and sugar.",64,69,"Salads & Sauces","",""],
+[140,"Stuffed Tomatoes","Cut off the tops of tomatoes, hollow the inside, and mix the inside that you take out with chopped up ham; bread crumbs or crackers powdered, butter, salt and pepper to your taste. Stuff the tomatoes full and replace the top close. Put them in a pan to bake in a hot oven for fifteen minutes.",64,69,"Vegetables & Sides","15 min",""],
+[141,"Blackberry Roll","Make this roll by the same directions given for the apple roll. See Recipe No. 138.",65,70,"Vegetables & Sides","20 min",""],
+[142,"Egg Plant Stuffed","Take out the inside of the plant and boil it in just enough water to cover it for ten minutes, and then drain or press the water all out through a cullender. Chop some ham fine, take bread crumbs and butter (one tablespoonful to one egg plant), and have equal proportions of ham, cracker and bread crumbs to the inside of the plants. Season with salt and black pepper to taste and fry it brown. Then stuff the plants full and close and put them to bake. They will bake in ten minutes, but should not be put in the oven until just before table use. They are a delicious vegetable prepared in this manner.",65,70,"Vegetables & Sides","10 min",""],
+[143,"Peach Cobbler","Peel the peaches (freestones) and make a pastry the same way as for pie, and roll out the dough as thin as for pie crust. Put one layer at the bottom of the dish, and cut the peaches into pieces the size of a plum and fill the dish with them, sprinkling them freely with fine sugar. Cover them over with another layer of pastry, cut with a knife two or three air-holes on the top and put to bake. Let it bake brown. It makes a delicious luncheon or dessert. Season the peaches with powdered cinnamon to taste.",65,70,"Puddings & Desserts","",""],
+[144,"Ladies' Custard","Boil a quart of sweet milk, and beat together half a dozen eggs with two tablespoonfuls of sugar until light. Pour the milk on the eggs and sugar, stirring well. Put a tablespoonful of sugar into a kettle that will hold the milk and eggs, and let the sugar brown. Then pour the milk and eggs into the kettle and let it come to a boil. Put your custard cups in a baking pan and fill the pan with cold water. Then fill the cups with custard and set in the stove until it becomes as thick as batter. It will need no flavoring extracts.",66,71,"Puddings & Desserts","",""],
+[145,"Batter Pudding","Five eggs; beat yelks and whites separately, very light, six tablespoonfuls of flour to one pint of milk, one teaspoonful of salt; sift flour three times, pour half of the milk to the flour and beat it light, then add the beaten yelks of eggs to flour and milk, and then add the whites also and beat again; lastly add the remaining half pint of milk and beat the whole pudding until very light. Have a good, tight, strong white bag, wet it, and put flour thickly on the inside, put pudding in it, tie it tight and put in a pot of boiling water and let it boil three quarters of an hour. Make a sauce of sugar and butter, rub the two together until light, flavor with nutmeg, and stir a wine glass of sherry wine or brandy in it well.",66,71,"Puddings & Desserts","45 min",""],
+[146,"Baked Batter Pudding","Use the same directions and quantities as given in the boiled pudding, and when you have it mixed as directed, and have a hot oven, pour pudding in baking pan and bake brown.",67,72,"Puddings & Desserts","",""],
+[147,"Corned Beef Hash","Take boiled corned beef and chop it very fine, four hot boiled Irish potatoes to one pound of beef, mash potatoes in the beef while hot, one slice of onion chopped with meat, half a teaspoonful of mustard mixed, two sprigs of parsley; then make into pones like a small loaf of bread, and bake brown. Season with black pepper to taste.",67,72,"Vegetables & Sides","",""],
+[148,"Tonic Bitters — A Southern Remedy for Invalids","Take one ounce of cardamom seed, one ounce of Peruvian bark bruised, two ounces of Gentian root bruised, half ounce of dry orange peel, one ounce of aloes, and put the whole into half a gallon of best whiskey or brandy; let it come to a boil, then strain or filter it through a fine cloth or filtering paper. Dose: half wineglassful three times a day before meals. Will strengthen and produce an appetite.",67,72,"Remedies & Tonics","",""],
+[149,"Suet Pudding","One pound of beef kidney suet, chop it fine, taking all strings from it, one pound of flour rubbed into suet until thoroughly mixed, salt to taste; one and a half teaspoonful of yeast powder mixed in with the flour; mix the whole gradually with water the same way that you mix up dough for any other bread, stiff; then roll out the dough about half an inch thick, and spread the dough with currant jelly; then roll up the dough round like a bottle, continuing to spread the under part of dough with jelly as you roll so as to have all of dough covered with the jelly. Take a clean linen towel and wrap the roll in it tight, sewing the ends and sides well; put it on in boiling water, well covered, and let it boil thirty minutes.",68,73,"Puddings & Desserts","30 min",""],
+[150,"Sauce for Suet Pudding","One tablespoonful of butter, one tea-cup of white sugar; rub both together until well mixed to a cream, then put on a kettle over steam, and as it heats stir it until a foam, then add one wine-glassful of brandy; stir until mixed, and flavor with nutmeg, and send to table hot with the pudding.",68,73,"Salads & Sauces","",""],
+[151,"Chicken Gumbo","Salt and pepper chicken before frying it. Take a chicken, separating it from all the joints and breaking the bones, fry the chicken in one and a half tablespoonful of lard or butter. First well mix the chicken in dry flour, let the fat be hot, put chicken to fry until brown; don't burn chicken. After fried, put it on in soup kettle with half a gallon of hot water, one and a half quarts of green ochre cut into thin pieces throwing the end away, and let the whole boil to three pints; season with pepper and salt. Chop half of an ordinary sized onion fine, and fry it with chicken; chilli pepper chopped fine if added is nice when liked.",68,73,"Creole & Southern Dishes","",""],
+[152,"Circuit Hash","One dozen tomatoes, one quart of butter beans, one dozen ears of corn cut off from cob, quarter pound of lean and fat pork cut in fine pieces — if pork is not liked, use two tablespoonfuls of butter; put on in a sauce-pan and stew one hour. Note: five minutes before dinner put in the corn to cook with the rest of stew.",69,74,"Creole & Southern Dishes","1 hr",""],
+[153,"Stewed Tomatoes","First scald the tomatoes in boiling water and then peel the skin from them, then cut them up in small pieces, cutting also one slice of onion fine in them; add no water; bread crumbs, one tablespoonful of butter, pepper and salt to taste. To one dozen of tomatoes, half a tea-cupful of bread crumbs.",69,74,"Vegetables & Sides","",""],
+[154,"Rice Pudding","Two tablespoonfuls of butter and sweeten to taste, one pint of rice boiled soft; thoroughly mix to this rice one pint of rich milk. Beat up two eggs very light, and add to the above also; well mix the whole. Flavor with the grated rind or peel of the half of an orange, and the juice of two oranges; mix well into pudding, and put into pan to bake.",69,74,"Puddings & Desserts","",""],
+[155,"Meringue for Pudding","The whites of five eggs beat very light, four tablespoonfuls of sugar, mix into eggs and beat light; spread thickly over pudding and put to brown.",70,75,"Puddings & Desserts","",""],
+[156,"Leaven Biscuit","Save a piece of leaven from the light bread you mix or make up over night, the size of a tea-cup; mix leaven up soft in water, add half a pint of flour to it, one teaspoonful of salt, seat to rise over night. Next morning take one level quart of flour, put a level teaspoonful of soda and sift it; rub into this flour one tablespoonful of lard, half tablespoonful of butter, until thoroughly mixed; then add the whole together, and work it with the hands until light, and make off in biscuits and put to rise in baking pan twenty minutes, then bake brown.",70,75,"Breads & Biscuits","20 min",""],
+[157,"Oyster Pie","Make pastry according to directions of pastry for all kinds of pies in Receipt No. 48. Have bottom and top crust — bottom crust to be thick as a quarter dollar. Put oyster liquor or juice on in a kettle to boil, and when it boils, skim the foam from it; then drop oysters into boiling liquor for four minutes only, take out oysters, lay them on a dish, then sift two tablespoonfuls of flour, take two tablespoonfuls of butter, rub into flour until well mixed, then dissolve the same with a little of hot liquor, salt and pepper to taste. Then pour into boiling liquor the mixture of flour and butter, stirring the same while pouring it in, till all is poured in. Put bottom crust covering bottom and sides of pan, then pour liquor in on crust; when this is done, put the oysters into the pan and cover the pan over with a thick cover of pastry, cutting small spaces in several parts on top. Baste top of pie with the white of an egg. One quart of oysters and the juice will make pie for six in family.",70,75,"Pies & Pastry","","6"],
+[158,"Yorkshire Pudding — To be eaten with Roast Beef","Sift one pint of flour and add to it one-half pint of milk; beat milk into flour with a large spoon until very light; then beat four eggs yelks and whites together very light, and add to flour and milk, and then beat the whole, adding one tablespoonful of butter, salt to taste. Put to bake in a dish; twenty minutes will bake it. When done send to table with roast beef, in same dish it is baked in.",71,76,"Puddings & Desserts","20 min",""],
+[159,"Cheese Pudding","Have mild cheese; grate half pound of cheese and half pound of apples, add to this half pint of sweet milk, beat four eggs very light, and add to the above. Before mixing apples with cheese, put to it one tablespoonful of white sugar; stir all well. Season with nutmeg, and pour it into a dish and put to bake, putting one tablespoonful of butter over it in small pieces. Twenty minutes will bake it, and send to table as a vegetable.",71,76,"Puddings & Desserts","20 min",""],
+[160,"Pap for Infant Diet","Take one pint of flour, sift it and tie it up in a clean cloth securely tight, so that no water can get into it; and put it in boiling water and let it boil steady for two hours, then take it out of water, and when it gets cold take outside crust from it. Whenever you are ready to nurse or feed the child, grate one tablespoonful of the boiled flour, and stir it into half a pint of boiled milk while the milk is boiling; sweeten the same with white sugar to taste. When the child has diarrhea, boil a two-inch stick of cinnamon in the pap. I have given birth to eleven children and raised them all, and nursed them with this diet. It is a Southern plantation preparation.",72,77,"Remedies & Tonics","2 hrs",""],
+];
+
+const ARCHIVE_ID = "whatmrsfisherkno00fishrich";
+
+function archiveURL(scan_n) {
+  return `https://archive.org/details/${ARCHIVE_ID}/page/n${scan_n}/mode/1up`;
+}
+
+// ─── CATEGORIES ────────────────────────────────────────────────────────────
+const CATEGORIES = [...new Set(RECIPES.map(r => r[5]))].sort();
+
+// ─── TAB LOGIC ─────────────────────────────────────────────────────────────
+function showTab(tab, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (tab === 'browse') renderBrowse();
+  if (tab === 'categories') renderCategories();
+}
+
+// ─── BROWSE ────────────────────────────────────────────────────────────────
+function initBrowseFilters() {
+  const sel = document.getElementById('catFilter');
+  CATEGORIES.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    sel.appendChild(opt);
+  });
+}
+
+function renderBrowse() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cat = document.getElementById('catFilter').value;
+  const filtered = RECIPES.filter(r => {
+    const matchQ = !q || r[1].toLowerCase().includes(q) || r[2].toLowerCase().includes(q);
+    const matchC = !cat || r[5] === cat;
+    return matchQ && matchC;
+  });
+  document.getElementById('browseCount').textContent =
+    `${filtered.length} of ${RECIPES.length} recipes`;
+  const list = document.getElementById('recipeList');
+  list.innerHTML = filtered.map(r => recipeItemHTML(r)).join('');
+  attachRecipeListeners(list);
+}
+
+function recipeItemHTML(r) {
+  const [num, title, body, pp, sn, cat, cook, portions] = r;
+  let badges = '';
+  if (cook) badges += `<span class="badge">⏱ ${cook}</span>`;
+  if (portions) badges += `<span class="badge">⚖ ${portions}</span>`;
+  return `<div class="recipe-item" data-num="${num}">
+  <div class="recipe-header">
+    <span class="recipe-num">${num}.</span>
+    <span class="recipe-title">${title}</span>
+    ${badges ? `<div class="recipe-badges">${badges}</div>` : ''}
+    <span class="recipe-cat">${cat}</span>
+    <span class="recipe-chevron">›</span>
+  </div>
+  <div class="recipe-body-wrap">
+    <p class="recipe-body">${body}</p>
+    <a class="recipe-link" href="${archiveURL(sn)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+      ↗ View source scan · p. ${pp}
+    </a>
+  </div>
+</div>`;
+}
+
+function attachRecipeListeners(container) {
+  container.querySelectorAll('.recipe-item').forEach(el => {
+    el.addEventListener('click', function() {
+      this.classList.toggle('open');
+    });
+  });
+}
+
+// ─── CATEGORIES ────────────────────────────────────────────────────────────
+function renderCategories() {
+  const grid = document.getElementById('catGrid');
+  if (grid.children.length > 0) return; // already rendered
+  CATEGORIES.forEach(cat => {
+    const count = RECIPES.filter(r => r[5] === cat).length;
+    const btn = document.createElement('button');
+    btn.className = 'cat-btn';
+    btn.innerHTML = `<span class="cat-btn-name">${cat}</span><span class="cat-btn-count">${count} recipes</span>`;
+    btn.onclick = () => showCatRecipes(cat, btn);
+    grid.appendChild(btn);
+  });
+}
+
+let activeCat = null;
+function showCatRecipes(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeCat = cat;
+  const results = document.getElementById('catResults');
+  const recipes = RECIPES.filter(r => r[5] === cat);
+  results.innerHTML = recipes.map(r => recipeItemHTML(r)).join('');
+  attachRecipeListeners(results);
+}
+
+// ─── MENU GENERATOR ────────────────────────────────────────────────────────
+const COURSE_CATS = {
+  dinner: [
+    {label: "Soup", cats: ["Soups & Chowders", "Creole & Southern Dishes"]},
+    {label: "Fish Course", cats: ["Fish & Seafood"]},
+    {label: "Main Course", cats: ["Meats & Poultry"]},
+    {label: "Side Dishes", cats: ["Vegetables & Sides"]},
+    {label: "Salad", cats: ["Salads & Sauces"]},
+    {label: "Dessert", cats: ["Puddings & Desserts", "Pies & Pastry"]},
+  ],
+  supper: [
+    {label: "First Course", cats: ["Soups & Chowders"]},
+    {label: "Main Dish", cats: ["Meats & Poultry", "Croquettes", "Creole & Southern Dishes"]},
+    {label: "Side Dishes", cats: ["Vegetables & Sides"]},
+    {label: "Dessert", cats: ["Puddings & Desserts", "Preserves, Jams & Jellies"]},
+  ],
+  breakfast: [
+    {label: "Breads", cats: ["Breads & Biscuits"]},
+    {label: "Main Dish", cats: ["Meats & Poultry", "Croquettes"]},
+    {label: "Sweets", cats: ["Preserves, Jams & Jellies", "Cakes & Cookies"]},
+  ],
+  luncheon: [
+    {label: "First Course", cats: ["Soups & Chowders"]},
+    {label: "Main Dish", cats: ["Salads & Sauces", "Fish & Seafood", "Croquettes"]},
+    {label: "Bread", cats: ["Breads & Biscuits"]},
+    {label: "Dessert", cats: ["Pies & Pastry", "Puddings & Desserts", "Cakes & Cookies"]},
+  ],
+};
+
+function generateMenu() {
+  const occasion = document.getElementById('menuOccasion').value;
+  const nCourses = parseInt(document.getElementById('menuCourses').value) || 4;
+  const template = COURSE_CATS[occasion];
+  const courses = template.slice(0, nCourses);
+  let html = '<h3>A Southern Table</h3>'
+    + '<div class="menu-date">' + occasion.charAt(0).toUpperCase() + occasion.slice(1)
+    + ' \u00b7 ' + new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}) + '</div>';
+  courses.forEach(function(course) {
+    const pool = RECIPES.filter(function(r) { return course.cats.indexOf(r[5]) !== -1; });
+    if (!pool.length) return;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    html += '<div class="menu-course">'
+      + '<div class="menu-course-label">' + course.label + '</div>'
+      + '<div class="menu-dish">'
+      + '<div class="menu-dish-header">'
+      + '<span class="menu-dish-title">' + pick[1] + '</span>'
+      + '<span class="menu-dish-chevron">&#8250;</span>'
+      + '</div>'
+      + '<div class="menu-dish-body">' + pick[2] + '<br><br>'
+      + '<a class="menu-source-link" href="' + archiveURL(pick[4]) + '" target="_blank" rel="noopener">'
+      + '&#8599; Source scan \u00b7 p.\u00a0' + pick[3] + '</a>'
+      + '</div>'
+      + '</div>'
+      + '</div>';
+  });
+  const out = document.getElementById('menuOutput');
+  out.innerHTML = html;
+  out.style.display = 'block';
+}
+
+// ─── INIT ───────────────────────────────────────────────────────────────────
+initBrowseFilters();
+renderBrowse();
+document.getElementById('btnGenerate').addEventListener('click', generateMenu);
+
+// Event delegation for menu dishes — attached once, works for all generated menus
+document.getElementById('menuOutput').addEventListener('click', function(e) {
+  var link = e.target.closest('a');
+  if (link) return; // let link clicks through
+  var dish = e.target.closest('.menu-dish');
+  if (dish) dish.classList.toggle('open');
+});
+</script>
+</body>
+</html>
